@@ -2,15 +2,7 @@ import { useContext, useEffect } from "react";
 import _ from "lodash";
 import { Wrapper } from "../styles/Output.styled";
 import { termContext } from "../Terminal";
-import {
-  Cmd,
-  HeroContainer,
-  Link,
-  PreName,
-  PreNameMobile,
-  PreWrapper,
-  Seperator,
-} from "../styles/Welcome.styled";
+import { PreName } from "../styles/Welcome.styled";
 const Email: React.FC = () => {
   const { history, rerender } = useContext(termContext);
 
