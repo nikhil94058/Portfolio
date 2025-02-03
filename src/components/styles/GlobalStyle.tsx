@@ -3,11 +3,11 @@ import { normalize } from "styled-normalize";
 
 const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
   ${normalize}
-
+  
   *, ::before, ::after {
     border-width: 0;
     border-style: solid;
-    border-color: ${({ theme }) => theme.colors?.border || "currentColor"};
+    border-color: ${({ theme }) => theme.colors || "currentColor"};
   }
 
   blockquote, dl, dd, h1, h2, h3,
@@ -28,40 +28,41 @@ const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
   body {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 500;
-    background-color: #2D0922;
-    color: ${({ theme }) => theme.colors?.text?.[100] || "#FFFFFF"};
+    background-color: ${({ theme }) => theme.colors?.body || "#2D0922"};
+    color: ${({ theme }) => theme.colors?.text[100] || "#FFFFFF"};
   }
 
   /* ===== Custom Scroll Bar ===== */
+  /* width */
   ::-webkit-scrollbar {
     width: 15px;
   }
-
+  /* Track */
   ::-webkit-scrollbar-track {
-    background: #F47845;
+    background: ${({ theme }) => theme.colors?.scrollHandle || "#F47845"};
   }
-
+  /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #F47845;
+    background: ${({ theme }) => theme.colors?.scrollHandle || "#F47845"};
   }
-
+  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #F47845;
+    background: ${({ theme }) => theme.colors?.scrollHandleHover || "#F47845"};
   }
 
-  input[type="text"] {
-    background-color: ${({ theme }) => theme.colors?.body || "transparent"};
-    color: ${({ theme }) => theme.colors?.text?.[100] || "#FFFFFF"};
-    caret-color: ${({ theme }) => theme.colors?.primary || "#F47845"};
+  input[type=text] {
+    background-color: ${({ theme }) => theme.colors?.body};
+    color: ${({ theme }) => theme.colors?.text[100]};
+    caret-color: ${({ theme }) => theme.colors?.primary};
   }
-
-  input[type="text"]:focus-visible {
+  input[type=text]:focus-visible {
     outline: none;
   }
 
   .sr-only {
     position: absolute;
     left: -10000px;
+    top: auto;
     width: 1px;
     height: 1px;
     overflow: hidden;

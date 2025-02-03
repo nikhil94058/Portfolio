@@ -45,7 +45,7 @@ export const Input = styled.input`
   flex-grow: 1;
   min-width: 85%;
   padding: 0.5rem;
-  border: 1px solid ${({ theme }) => theme.colors?.border || "#ccc"};
+  border: 1px solid #f47845; /* Yellowish red border */
   border-radius: 4px;
   font-size: 1rem;
 
