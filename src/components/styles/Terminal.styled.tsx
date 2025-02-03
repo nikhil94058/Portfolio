@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding: 1.25rem;
-  padding-top: 0.75rem;
-
+  padding: 0.75rem 1.25rem 1.25rem;
   display: flex;
   flex-direction: column-reverse;
   max-height: calc(100vh - 2rem);
@@ -11,8 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const CmdNotFound = styled.div`
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
+  margin: 0.25rem 0 1rem;
 `;
 
 export const Empty = styled.div`
@@ -35,19 +32,31 @@ export const MobileBr = styled.br`
 `;
 
 export const Form = styled.form`
-  @media (min-width: 550px) {
-    display: flex;
+  display: flex;
+  flex-wrap: wrap; /* Enhances responsiveness */
+  gap: 0.5rem; /* Adds spacing between elements */
+
+  @media (max-width: 550px) {
+    flex-direction: column;
   }
 `;
 
 export const Input = styled.input`
   flex-grow: 1;
+  min-width: 85%;
+  padding: 0.5rem;
+  border: 1px solid ${({ theme }) => theme.colors?.border || "#ccc"};
+  border-radius: 4px;
+  font-size: 1rem;
 
-  @media (max-width: 550px) {
-    min-width: 85%;
+  &:focus {
+    outline: none;
+    border-color: ${({ theme }) => theme.colors?.primary || "#F47845"};
   }
 `;
 
 export const Hints = styled.span`
   margin-right: 0.875rem;
+  font-size: 0.875rem;
+  color: ${({ theme }) => theme.colors?.text?.[300] || "#A0A0A0"};
 `;

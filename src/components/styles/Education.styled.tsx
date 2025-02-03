@@ -6,13 +6,13 @@ export const EduIntro = styled.div`
 
 export const EduList = styled.div`
   margin-bottom: 1rem;
+`;
 
-  .title {
-    font-weight: 700;
-    margin-bottom: 0.275rem;
-  }
+export const EduTitle = styled.div`
+  font-weight: 700;
+  margin-bottom: 0.275rem;
+`;
 
-  .desc {
-    color: ${({ theme }) => theme.colors?.text[200]};
-  }
+export const EduDesc = styled.div`
+  color: ${({ theme }) => theme.colors?.text?.[200]};
 `;
